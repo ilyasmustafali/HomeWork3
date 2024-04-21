@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TechDragons - Web Site Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <nav>
+                <ul class="navbar left">
+                    <li><a href="index.html"><img src="techlogo.png" alt="photo" width="150px" height="50"></a></li>
+                </ul>
+                <ul class="navbar right">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="members.html">About group members</a></li>
+                    <li><a href="hourofcode.html">Hour of Code</a></li>
+                    <li><a href="project.html">Web Project</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </header>
+
+        <section id="load"></section>
+
+        <section class="content" id="content">
+            <body onload="startTime()"></body>
+            <style>
+                .clck {
+                    text-align: center;
+                    font-size: 40px;
+                }
+            </style>
+            <div id="txt" class="clck"></div>
+
+            <p>  <marquee direction="right" >
+                Welcome to TechDragons.
+                </marquee>
+            We`re a team of 4 SITE students and tech lovers from ADA university. We`re excited to introduce you to our team, showcase our recent Hour of Code project and share details about our current Website project on this website. Explore and enjoy!</p>
+           
+
+            <img src="6.png" alt="photo" width="700" height="600">
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+    
+</body>
+</html>
